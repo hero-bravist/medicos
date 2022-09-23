@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <title>Document</title>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="medicos.html">Gestión de médicos<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pacientes.html">Gestión de pacientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="citasMedicas.html">Gestión de citas médicas</a>
+            </li>
+            <li class="nav-item">
+                <label class="btn btn-outline-success my-0 my-sm-0">Hora del sistema: <label id="mostrarReloj"></label>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>
+<body onload="horaSistema();">
+
+
+  <!-- <section>
+    <div>
+      <div>
+        <select  name="name" id="medicos" >
+          <option value="">Alejandro V.</option>
+          <option value="">Michelle S.</option>
+        </select>
+      </div>
+      <input type="date" >
+      <select name="" id=""></select>
+      <button onclick="">citar</button>
+    </div>
+
+  </section> -->
+
+  <section>
+    <article>
+      <div>
+          <label for="">Nombre</label>
+          <input type="text" name="" id="Nombre">
+      </div>
+      <div>
+        <label for="">Apellidos</label>
+        <input type="text" name="" id="apellido">
+      </div>
+      <div>
+        <label for="">Documento de identidad</label>
+        <input type="number" name="" id="cc">
+      </div>
+      <div>
+        <label for="">razon de la hospitalizacion</label>
+        <input type="text" name="" id="razon">
+      </div>
+      <div>
+        <label for="">fecha de ingreso</label>
+        <input type="date" name="" id="fecha-entrada">
+      </div>
+      <div>
+        <label for="">fecha de salida</label>
+        <input type="date" name="" id="fecha-salida">
+      </div>
+      <div>
+        <div>
+          <label for="">si</label>
+          <input type="checkbox" id="si">
+        </div>
+        <div>
+          <label for="">no</label>
+          <input type="checkbox" id="no">
+        </div>
+      </div>
+      <button type="button" id="boton_recibo" onclick="cita()">recibo</button>
+    </article>
+  </section>
+
+
+
+
+
+  <!-- <table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011-04-25</td>
+            <td>$320,800</td>
+        </tr>
+        <tr>
+            <td>Garrett Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>63</td>
+            <td>2011-07-25</td>
+            <td>$170,750</td>
+        </tr>
+      </tbody>
+      <tfoot>
+          <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Office</th>
+              <th>Age</th>
+              <th>Start date</th>
+              <th>Salary</th>
+          </tr>
+      </tfoot>
+  </table> -->
+    
+
+
+
+    <script src="reloj.js"></script>
+    <script src="pdf.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="jsPDF-1.3.2\dist\jspdf.min.js"></script>
+
+    <footer>
+        <div class="card">
+            <div class="card-body text-center">
+              <blockquote class="blockquote mb-0">
+                <p>Aplicación de Citas Médicas - Desarrollada en JavaScript.</p>
+                <footer class="blockquote-footer">Ejemplo de clase </footer>
+              </blockquote>
+            </div>
+          </div>
+    </footer>
+</body>
+</html>
